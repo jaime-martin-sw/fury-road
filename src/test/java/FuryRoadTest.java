@@ -64,7 +64,15 @@ public class FuryRoadTest {
     void provided4Test () {
         int solution = Solution.solution("SSSSSSSAAAAASSSSSSAAASSSSSSSSASAS");
 
-        assertEquals(solution, 890);
+        assertEquals(solution, 885);
+
+    }
+
+    @Test
+    void provided5Test () {
+        int solution = Solution.solution("AS");
+
+        assertEquals(solution, 35);
 
     }
 }

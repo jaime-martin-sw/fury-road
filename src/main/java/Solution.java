@@ -13,4 +13,8 @@ public class Solution {
         System.out.println("Solution: " + solution);
 
     }
+
+    Solution getTestObject() {
+        return new Solution();
+    }
 }

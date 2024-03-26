@@ -24,15 +24,12 @@ public class Road {
     }
 
     public int calculateOptimizedJourney() {
-
-        if (totalCostByFootLeft < totalCostByScooterLeft) {
-            return totalCostByFootLeft;
-        }
-        int solution = totalCostByScooterLeft;
-        for (int i = 1; i < surfaceList.size() - 2 ; i++) {
+        int solution = (totalCostByScooterLeft <= totalCostByFootLeft? totalCostByScooterLeft:totalCostByFootLeft);
+        for (int i = 0; i < surfaceList.size() - 1 ; i++) {
             int newSolution = calculatedCostByScooter[i] + calculatedCostByFootLeft[i+1];
-            if (newSolution < solution) {
+            if (newSolution <= solution) {
                 solution = newSolution;
+                System.out.println("Hop of the bike at i = " + i);
             }
         }
         return solution;
@@ -58,7 +55,7 @@ public class Road {
         calculatedCostByFootLeft[j] = totalCostByFootLeft;
         calculatedCostByScooterLeft[j] = totalCostByScooterLeft;
 
-        System.out.println("Partial load: \n" + this);
+      //  System.out.println("Partial load: \n" + this);
     }
 
     @Override
